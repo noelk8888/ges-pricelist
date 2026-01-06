@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GES Price List Search</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <!-- Apple Touch Icon for iPhone/iPad home screen -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="GES Price List">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Company Name Input Section -->
+        <div class="input-section" id="inputSection">
+            <h1>Price List Lookup</h1>
+            <input type="text" id="companyNameInput" placeholder="Enter company name..." autocomplete="off">
+            <button id="startBtn">Start</button>
+        </div>
+
+        <!-- Search Section (hidden initially) -->
+        <div class="search-section" id="searchSection" style="display: none;">
+            <!-- Company Name Header -->
+            <div class="company-header">
+                <h2 id="companyDisplay" class="company-display"></h2>
+                <button id="changeNameBtn" class="change-name-btn">Change Name</button>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for product code or description..."
+                    autocomplete="off">
+                <button id="clearBtn">Clear</button>
+            </div>
+
+            <!-- Selection Controls -->
+            <div class="selection-controls">
+                <div class="selection-counter">
+                    <span id="selectionCount">Selected: 0/10</span>
+                </div>
+                <button id="generateQuoteBtn" class="quote-btn" disabled>Generate Quote</button>
+                <button id="showAllBtn" class="show-all-btn" style="display: none;">Show All Results</button>
+            </div>
+
+            <!-- Results Display -->
+            <div id="resultsContainer"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
