@@ -35,7 +35,7 @@ loadProductData();
 
 // Start button click
 startBtn.addEventListener('click', () => {
-    const companyName = companyNameInput.value.trim();
+    const companyName = companyNameInput.value.trim().toUpperCase();
     if (companyName) {
         currentCompanyName = companyName;
         companyDisplay.textContent = currentCompanyName;
@@ -232,7 +232,6 @@ function displayResults(results, isQuote = false) {
     html += `
         </div>
         <div class="results-footer">
-            <div class="footer-date">Processed: ${currentDate}</div>
             <div class="footer-disclaimer">
                 Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. (as of ${currentDate})
             </div>
@@ -288,7 +287,6 @@ function copyResults() {
         textOutput += `₱${product.dealerPrice}/pc\n\n`;
     });
 
-    textOutput += `\nProcessed: ${currentDate}\n\n`;
     textOutput += `Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. (as of ${currentDate})`;
 
     // Copy to clipboard
