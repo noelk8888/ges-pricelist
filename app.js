@@ -233,7 +233,7 @@ function displayResults(results, isQuote = false) {
         </div>
         <div class="results-footer">
             <div class="footer-disclaimer">
-                Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}
+                Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.
             </div>
         </div>
         <div class="copy-btn-container">
@@ -287,7 +287,7 @@ function copyResults() {
         textOutput += `₱${product.dealerPrice}/pc\n\n`;
     });
 
-    textOutput += `Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}`;
+    textOutput += `Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.`;
 
     // Copy to clipboard
     navigator.clipboard.writeText(textOutput).then(() => {
