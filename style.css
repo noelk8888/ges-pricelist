@@ -330,6 +330,151 @@ body {
     background: #4CAF50;
 }
 
+/* Update Price List link */
+.update-link-wrap {
+    margin-top: 18px;
+}
+
+.update-link {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.update-link:hover {
+    color: #555;
+}
+
+/* Upload Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal-card {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.file-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+#docxFileInput {
+    display: none;
+}
+
+.file-btn {
+    padding: 9px 16px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.file-label:hover .file-btn {
+    background: #e4e4e4;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.upload-submit-btn {
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.upload-submit-btn:hover:not(:disabled) {
+    background: #45a049;
+}
+
+.upload-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.upload-status {
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.upload-status.success {
+    color: #4CAF50;
+}
+
+.upload-status.error {
+    color: #f44336;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 

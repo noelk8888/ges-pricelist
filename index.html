@@ -29,6 +29,28 @@
             <h1>Price List Lookup</h1>
             <input type="text" id="companyNameInput" placeholder="Enter company name..." autocomplete="off">
             <button id="startBtn">Start</button>
+            <div class="update-link-wrap">
+                <button class="update-link" id="openUploadBtn">Update Price List</button>
+            </div>
+        </div>
+
+        <!-- Upload Modal -->
+        <div class="modal-overlay" id="uploadModal">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <span class="modal-title">Update Price List</span>
+                    <button class="modal-close" id="closeModalBtn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <label class="file-label" for="docxFileInput">
+                        <span class="file-btn">Choose .docx file</span>
+                        <span class="file-name" id="fileNameDisplay">No file chosen</span>
+                    </label>
+                    <input type="file" id="docxFileInput" accept=".docx">
+                    <button class="upload-submit-btn" id="uploadDocxBtn" disabled>Upload &amp; Update</button>
+                    <div class="upload-status" id="uploadStatus"></div>
+                </div>
+            </div>
         </div>
 
         <!-- Search Section (hidden initially) -->

@@ -2,551 +2,516 @@
   {
     "code": "XL-15W",
     "description": "15W Daylight/Warm White 5years warranty",
-    "dealerPrice": "1,608"
+    "dealerPrice": "2,010"
   },
   {
     "code": "XL-30W",
     "description": "30W Daylight/Warm White 5years warranty",
-    "dealerPrice": "2,893"
+    "dealerPrice": "3,617"
   },
   {
     "code": "XL-60W",
     "description": "60W Daylight/Warm White 5years warranty",
-    "dealerPrice": "5,787"
+    "dealerPrice": "7,234"
   },
   {
     "code": "XT-15W",
     "description": "15W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "1,531"
+    "dealerPrice": "1,914"
   },
   {
     "code": "XT-30W",
     "description": "30W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "2,893"
+    "dealerPrice": "3,617"
   },
   {
     "code": "XT-60W",
     "description": "60W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "5,786"
+    "dealerPrice": "7,232"
   },
   {
     "code": "XT-120WB",
     "description": "120W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "9,234"
+    "dealerPrice": "11,543"
   },
   {
     "code": "XT-180WB",
     "description": "180W Daylight/Warm White 5years warranty",
-    "dealerPrice": "13,851"
+    "dealerPrice": "17,314"
   },
   {
     "code": "XD-30W",
     "description": "30W Daylight/Cool White 5years warranty",
-    "dealerPrice": "2,893"
+    "dealerPrice": "3,617"
   },
   {
     "code": "XD-60W",
     "description": "60W Daylight/Cool White 5years warranty",
-    "dealerPrice": "5,786"
+    "dealerPrice": "7,232"
   },
   {
     "code": "XD-120W",
     "description": "120W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "9,234"
+    "dealerPrice": "11,543"
   },
   {
     "code": "XD-180W",
     "description": "180W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "13,851"
+    "dealerPrice": "17,314"
   },
   {
     "code": "ET8A-16WQ",
     "description": "T8/1.2M/16W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "482"
+    "dealerPrice": "603"
   },
   {
     "code": "ET8B-8WQ",
     "description": "T8/0.6M/8W Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "291"
+    "dealerPrice": "363"
   },
   {
     "code": "TEOS-3WH",
-    "description": "3W/E27 Daylight/Warm White 5 Year warranty",
-    "dealerPrice": "162"
+    "description": "3W / E27 Daylight/Warm White 5 Year warranty",
+    "dealerPrice": "203"
   },
   {
     "code": "TEOS-6WH",
-    "description": "6W/E27 Daylight/Warm White 5 Year warranty",
-    "dealerPrice": "248"
+    "description": "6W / E27 Daylight/Warm white 5 Year warranty",
+    "dealerPrice": "308"
   },
   {
     "code": "TEOS-9WH",
-    "description": "9W/E27 Daylight/Warm White 5 Year warranty",
-    "dealerPrice": "315"
+    "description": "9W / E27 Daylight/Warm White 5 Year warranty",
+    "dealerPrice": "394"
   },
   {
     "code": "TLRQ-3WQ",
-    "description": "3W/E14 Daylight/Warm White 5years warranty",
-    "dealerPrice": "153"
+    "description": "3W/E14 Daylight/Warm white 5years warranty",
+    "dealerPrice": "190"
   },
   {
     "code": "WECH-5WY",
-    "description": "5W/E27 Daylight/Warm White 5years warranty",
-    "dealerPrice": "348"
+    "description": "5W/E27 Daylight/Warm white 5years warranty",
+    "dealerPrice": "434"
   },
   {
     "code": "WECH-8WY",
-    "description": "8W/E27 Daylight/Warm White 5years warranty",
-    "dealerPrice": "467"
+    "description": "8W/E27 Daylight/Warm white 5years warranty",
+    "dealerPrice": "583"
   },
   {
     "code": "WPSH-3W",
-    "description": "3W/PL-S Daylight/Warm White 5years warranty",
-    "dealerPrice": "306"
+    "description": "3W/PL-S Daylight/Warm white 5years warranty",
+    "dealerPrice": "381"
   },
   {
     "code": "WPCH-5WY",
-    "description": "5W/PL-C Daylight/Warm White 5years warranty",
-    "dealerPrice": "348"
+    "description": "5W/PL-C Daylight/Warm white 5years warranty",
+    "dealerPrice": "434"
   },
   {
     "code": "WPCH-8WY",
-    "description": "8W/PL-C Daylight/Warm White 5years warranty",
-    "dealerPrice": "467"
+    "description": "8W/PL-C Daylight/Warm white 5years warranty",
+    "dealerPrice": "583"
   },
   {
     "code": "WPCL-9W",
-    "description": "9W/E27 Cool White/Warm White 5years warranty",
-    "dealerPrice": "324"
+    "description": "9W/E27 Cool White/Warm white 5years warranty",
+    "dealerPrice": "404"
   },
   {
     "code": "TMR-2WQ",
     "description": "2W/MR16 Daylight/Warm White 5years warranty",
-    "dealerPrice": "147"
+    "dealerPrice": "184"
   },
   {
     "code": "TMR-4WQ",
     "description": "4W/MR16 Daylight/Warm White 5years warranty",
-    "dealerPrice": "230"
+    "dealerPrice": "287"
   },
   {
     "code": "TMR-6.5WQ",
     "description": "6W/MR16 Daylight/Cool White/Warm White 5years warranty",
-    "dealerPrice": "300"
+    "dealerPrice": "375"
   },
   {
     "code": "WX4B-5.5W",
-    "description": "5.5W/4 inches Warm White 5years warranty",
-    "dealerPrice": "387"
+    "description": "5.5W/4 inches Warm white 5years warranty",
+    "dealerPrice": "483"
   },
   {
     "code": "WX4B-5.5WH",
     "description": "5.5W/4 inches Daylight 5years warranty",
-    "dealerPrice": "387"
+    "dealerPrice": "483"
   },
   {
     "code": "WX6B-5.5W",
-    "description": "5.5W/6 inches Daylight/Warm White 5years warranty",
-    "dealerPrice": "453"
+    "description": "5.5W/6 inches Daylight/Warm white 5years warranty",
+    "dealerPrice": "567"
   },
   {
     "code": "WX6B-9WH",
-    "description": "9W/6 inches Daylight/Warm White 5years warranty",
-    "dealerPrice": "510"
+    "description": "9W/6 inches Daylight/Warm white 5years warranty",
+    "dealerPrice": "637"
   },
   {
     "code": "WX8B-12W",
-    "description": "12W/8 inches Warm White 5years warranty",
-    "dealerPrice": "680"
+    "description": "12W/8 inches Warm white 5years warranty",
+    "dealerPrice": "850"
   },
   {
     "code": "WX8B-12WH",
     "description": "12W/8 inches Daylight 5years warranty",
-    "dealerPrice": "680"
+    "dealerPrice": "850"
   },
   {
     "code": "WX4D-5.5W",
-    "description": "5.5W/4 inches Daylight/Warm White 5years warranty",
-    "dealerPrice": "405"
+    "description": "5.5W/4 inches Daylight/Warm white 5years warranty",
+    "dealerPrice": "506"
   },
   {
     "code": "WX8D-12W",
-    "description": "12W/8 inches Daylight/Warm White 5years warranty",
-    "dealerPrice": "774"
+    "description": "12W/8 inches Daylight/Warm white 5years warranty",
+    "dealerPrice": "968"
   },
   {
     "code": "YT8DS-0.6MB",
-    "description": "YT8DS-0.6M Fixture",
-    "dealerPrice": "69"
+    "description": "",
+    "dealerPrice": "86"
   },
   {
     "code": "YT8DS-1.2MB",
-    "description": "YT8DS-1.2M Fixture",
-    "dealerPrice": "82"
+    "description": "",
+    "dealerPrice": "102"
   },
   {
     "code": "PL-C to E27",
-    "description": "PL-C to E27 / PLS to E27 Adaptor",
-    "dealerPrice": "53"
+    "description": "PLS to E27",
+    "dealerPrice": "66"
   },
   {
     "code": "E40 TO E27",
-    "description": "E40 TO E27 Adaptor",
-    "dealerPrice": "48"
+    "description": "",
+    "dealerPrice": "60"
   },
   {
     "code": "E14 TO E27",
-    "description": "E14 TO E27 Adaptor",
-    "dealerPrice": "37"
+    "description": "",
+    "dealerPrice": "50"
   },
   {
     "code": "PL-4pin to E27",
-    "description": "PL-4pin to E27 Adaptor",
-    "dealerPrice": "53"
+    "description": "",
+    "dealerPrice": "66"
   },
   {
     "code": "1E27 to 2E27",
-    "description": "1E27 to 2E27 Connector",
-    "dealerPrice": "63"
+    "description": "",
+    "dealerPrice": "79"
   },
   {
     "code": "1E27 to 3E27",
-    "description": "1E27 to 3E27 Connector",
-    "dealerPrice": "168"
-  },
-  {
-    "code": "1E27 to 5E27",
-    "description": "1E27 to 5E27 Connector",
-    "dealerPrice": "220"
-  },
-  {
-    "code": "MR16 SOCKET",
-    "description": "MR16 Socket",
-    "dealerPrice": "25"
-  },
-  {
-    "code": "LP20-5WB",
-    "description": "5W/E27 Wide Flood Daylight 3years warranty",
-    "dealerPrice": "331"
-  },
-  {
-    "code": "LP20-5WA",
-    "description": "5W/E27 Wide Flood White 3years warranty",
-    "dealerPrice": "331"
-  },
-  {
-    "code": "LP30-10WB",
-    "description": "10W/E27 Wide Flood Daylight 3years warranty",
-    "dealerPrice": "773"
-  },
-  {
-    "code": "LP30-10WBZ",
-    "description": "10W/E27 Wide Flood Warm White 3years warranty",
-    "dealerPrice": "773"
-  },
-  {
-    "code": "LP30-10WA",
-    "description": "10W/E27 Spot Daylight/Cool White 3years warranty",
-    "dealerPrice": "773"
-  },
-  {
-    "code": "LP38-18WB",
-    "description": "18W/E27 Wide Flood Daylight/Warm White 3years warranty",
-    "dealerPrice": "1,088"
-  },
-  {
-    "code": "LP38-18WA",
-    "description": "18W/E27 SPOT Daylight/Warm White 3years warranty",
-    "dealerPrice": "1,088"
-  },
-  {
-    "code": "LA111-12WB",
-    "description": "12W/AR111 Wide Flood Daylight/Warm White 3years warranty",
-    "dealerPrice": "833"
-  },
-  {
-    "code": "LA111-12WA",
-    "description": "12W/AR111 SPOT Daylight/Warm White 3years warranty",
-    "dealerPrice": "833"
-  },
-  {
-    "code": "HECM-1WL",
-    "description": "E27 frosted Daylight/Cool White/Warm White 2years warranty",
-    "dealerPrice": "72"
-  },
-  {
-    "code": "HECM-3WL",
-    "description": "E27 frosted Daylight/Cool White/Warm White 2years warranty",
-    "dealerPrice": "78"
-  },
-  {
-    "code": "TECM-3WL",
-    "description": "E27 frosted Daylight/Cool White/Warm White 2years warranty",
-    "dealerPrice": "78"
-  },
-  {
-    "code": "HECM-5WL",
-    "description": "E27 frosted Daylight/Cool White/Warm White 2years warranty",
-    "dealerPrice": "99"
-  },
-  {
-    "code": "TECM-5WL",
-    "description": "E27 frosted Daylight/Cool White/Warm White 2years warranty",
-    "dealerPrice": "99"
-  },
-  {
-    "code": "HECM-7WL",
-    "description": "E27 frosted Daylight/Cool White/Warm White 2years warranty",
-    "dealerPrice": "120"
-  },
-  {
-    "code": "TECM-7WL",
-    "description": "E27 frosted Daylight/Cool White/Warm White 2years warranty",
-    "dealerPrice": "120"
-  },
-  {
-    "code": "HECM-9WL",
-    "description": "E27 frosted Warm White 2years warranty",
-    "dealerPrice": "144"
-  },
-  {
-    "code": "TECM-9WL",
-    "description": "E27 frosted Warm White 2years warranty",
-    "dealerPrice": "144"
-  },
-  {
-    "code": "HSCQ-12WL",
-    "description": "E27 Frosted Cool White/Warm White 2years warranty",
-    "dealerPrice": "423"
-  },
-  {
-    "code": "HSCQ-18WL",
-    "description": "E27 Frosted Warm White 2years warranty",
-    "dealerPrice": "549"
-  },
-  {
-    "code": "HSCQ-25WL",
-    "description": "E27 Frosted Cool White/Warm White 2years warranty",
-    "dealerPrice": "651"
-  },
-  {
-    "code": "YHSA9-10WEL",
-    "description": "E27 210mm frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "460"
-  },
-  {
-    "code": "YHSA9-10WQL",
-    "description": "G10Q 210mm frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "460"
-  },
-  {
-    "code": "YHSD5-12WEL",
-    "description": "E27 245mm frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "493"
-  },
-  {
-    "code": "YHSD5-12WQL",
-    "description": "E27 245mm frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "493"
-  },
-  {
-    "code": "YHSB9-16WEL",
-    "description": "E27 290mm frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "635"
-  },
-  {
-    "code": "YHSB9-16WQL",
-    "description": "G10Q 290mm frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "635"
-  },
-  {
-    "code": "YXSA-9WL",
-    "description": "LED driver Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "339"
-  },
-  {
-    "code": "YXSB-12WL",
-    "description": "LED driver Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "383"
-  },
-  {
-    "code": "YXSC-15WL",
-    "description": "LED driver Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "427"
-  },
-  {
-    "code": "YXSD-18WL",
-    "description": "LED driver Frosted Warm White 2years warranty",
-    "dealerPrice": "493"
-  },
-  {
-    "code": "YXSE-32WL",
-    "description": "LED driver Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "756"
-  },
-  {
-    "code": "YX3B-4WL",
-    "description": "w/ LED driver 3 inches Frosted Daylight/Warm White 2years warranty",
+    "description": "",
     "dealerPrice": "210"
   },
   {
+    "code": "1E27 to 5E27",
+    "description": "",
+    "dealerPrice": "274"
+  },
+  {
+    "code": "LP20-5WB",
+    "description": "5W/E27 Wide Flood/Daylight 3years warranty",
+    "dealerPrice": "413"
+  },
+  {
+    "code": "LP20-5WA",
+    "description": "5W/E27 Wide Flood/White 3years warranty",
+    "dealerPrice": "413"
+  },
+  {
+    "code": "LP30-10WB",
+    "description": "10W/E27 Wide Flood/Daylight 3years warranty",
+    "dealerPrice": "965"
+  },
+  {
+    "code": "LP30-10WBZ",
+    "description": "10W/E27 Wide Flood/WarmWhite 3years warranty",
+    "dealerPrice": "965"
+  },
+  {
+    "code": "LP30-10WA",
+    "description": "10W/E27 Spot/Daylight/Cool White 3years warranty",
+    "dealerPrice": "965"
+  },
+  {
+    "code": "LP38-18WB",
+    "description": "18W/E27 Wide Flood/Daylight 3years warranty",
+    "dealerPrice": "1,360"
+  },
+  {
+    "code": "LP38-18WA",
+    "description": "18W/E27 SPOT Daylight/Warm white 3years warranty",
+    "dealerPrice": "1,360"
+  },
+  {
+    "code": "LA111-12WB",
+    "description": "12W/AR111 Wide Flood/Daylight/Warm white 3years warranty",
+    "dealerPrice": "1,041"
+  },
+  {
+    "code": "LA111-12WA",
+    "description": "12W/AR111 SPOT Daylight/Warm white 3years warranty",
+    "dealerPrice": "1,041"
+  },
+  {
+    "code": "HECM-1WL",
+    "description": "E27 \u2013 frosted Daylight/Cool White/Warm White",
+    "dealerPrice": "90"
+  },
+  {
+    "code": "HECM-3WL / TECM-3WL",
+    "description": "E27 \u2013 frosted Daylight/Cool White/Warm White",
+    "dealerPrice": "97"
+  },
+  {
+    "code": "HECM-5WL/ TECM-5WL",
+    "description": "E27 \u2013 frosted Daylight/Cool White/Warm White",
+    "dealerPrice": "124"
+  },
+  {
+    "code": "HECM-7WL/ TECM-7WL",
+    "description": "E27 \u2013 frosted Daylight/Cool White/Warm White",
+    "dealerPrice": "150"
+  },
+  {
+    "code": "HECM-9WL/ TECM-9WL",
+    "description": "E27 \u2013 frosted Warm White",
+    "dealerPrice": "180"
+  },
+  {
+    "code": "HSCQ-12WL",
+    "description": "E27 \u2013 Frosted Cool White/Warm White",
+    "dealerPrice": "529"
+  },
+  {
+    "code": "HSCQ-18WL",
+    "description": "E27 \u2013 Frosted Warm White",
+    "dealerPrice": "686"
+  },
+  {
+    "code": "HSCQ-25WL",
+    "description": "E27 \u2013 Frosted Cool White/Warm White",
+    "dealerPrice": "814"
+  },
+  {
+    "code": "YHSA9-10WEL",
+    "description": "E27 \u2013 210mm frosted/Daylight/Warm White",
+    "dealerPrice": "575"
+  },
+  {
+    "code": "YHSA9-10WQL",
+    "description": "G10Q \u2013 210mm frosted/Daylight/Warm White",
+    "dealerPrice": "575"
+  },
+  {
+    "code": "YHSD5-12WEL",
+    "description": "E27 \u2013 245mm frosted/Daylight/Warm White",
+    "dealerPrice": "616"
+  },
+  {
+    "code": "YHSD5-12WQL",
+    "description": "E27 \u2013 245mm frosted/Daylight/Warm White",
+    "dealerPrice": "616"
+  },
+  {
+    "code": "YHSB9-16WEL",
+    "description": "E27 \u2013 290mm frosted/Daylight/Warm White",
+    "dealerPrice": "794"
+  },
+  {
+    "code": "YHSB9-16WQL",
+    "description": "G10Q \u2013 290mm frosted/Daylight/Warm White",
+    "dealerPrice": "794"
+  },
+  {
+    "code": "YXSA-9WL",
+    "description": "LED driver Frosted/Daylight/Warm White",
+    "dealerPrice": "424"
+  },
+  {
+    "code": "YXSB-12WL",
+    "description": "LED driver Frosted/Daylight/Warm White",
+    "dealerPrice": "479"
+  },
+  {
+    "code": "YXSC-15WL",
+    "description": "LED driver Frosted/Daylight/Warm White",
+    "dealerPrice": "534"
+  },
+  {
+    "code": "YXSD-18WL",
+    "description": "LED driver Frosted/Warm White",
+    "dealerPrice": "616"
+  },
+  {
+    "code": "YXSE-32WL",
+    "description": "LED driver Frosted/Daylight/Warm White",
+    "dealerPrice": "944"
+  },
+  {
+    "code": "YX3B-4WL",
+    "description": "w/ LED driver 3 inches - Frosted/Daylight/Warm White",
+    "dealerPrice": "262"
+  },
+  {
     "code": "YX4B-6WL",
-    "description": "w/ LED driver 4 inches Frosted Warm White 2years warranty",
-    "dealerPrice": "264"
+    "description": "w/ LED driver 4 inches - Frosted/Warm White",
+    "dealerPrice": "330"
   },
   {
     "code": "YX6B-10WL",
-    "description": "w/ LED driver 6 inches Frosted Warm White 2years warranty",
-    "dealerPrice": "378"
+    "description": "w/ LED driver 6 inches - Frosted/Warm White",
+    "dealerPrice": "472"
   },
   {
     "code": "YX8B-16WL",
-    "description": "w/ LED driver 8 inches Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "525"
+    "description": "w/ LED driver 8 inches - Frosted/Daylight/Warm White",
+    "dealerPrice": "656"
   },
   {
     "code": "YX4D-6WL",
-    "description": "w/ LED driver 4 inches Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "264"
+    "description": "w/ LED driver 4 inches - Frosted/Daylight/Warm White",
+    "dealerPrice": "330"
   },
   {
     "code": "YX6D-10WL",
-    "description": "w/ LED driver 6 inches Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "390"
+    "description": "w/ LED driver 6 inches - Frosted/Daylight/Warm White",
+    "dealerPrice": "487"
   },
   {
     "code": "YX8D-16WL",
-    "description": "w/ LED driver 8 inches Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "546"
+    "description": "w/ LED driver 8 inches - Frosted/Daylight/Warm White",
+    "dealerPrice": "682"
   },
   {
     "code": "YECH-3WL",
-    "description": "E27 rotatable Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "201"
+    "description": "E27 rotatable Frosted/Daylight/Warm White",
+    "dealerPrice": "251"
   },
   {
     "code": "YECH-5WL",
-    "description": "E27 rotatable Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "231"
+    "description": "E27 rotatable Frosted/Daylight/Warm White",
+    "dealerPrice": "289"
   },
   {
     "code": "YECH-8WL",
-    "description": "E27 rotatable Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "315"
+    "description": "E27 rotatable Frosted/Daylight/Warm White",
+    "dealerPrice": "394"
   },
   {
     "code": "YPSH-3WL",
-    "description": "PL-S rotatable Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "201"
+    "description": "PL-S rotatable Frosted/Daylight/Warm White",
+    "dealerPrice": "251"
   },
   {
     "code": "YPCH-5WL",
-    "description": "PL-C rotatable Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "231"
+    "description": "PL-C rotatable Frosted/Daylight/Warm White",
+    "dealerPrice": "289"
   },
   {
     "code": "YPCH-8WL",
-    "description": "PL-C rotatable Frosted Daylight/Warm White 2years warranty",
-    "dealerPrice": "315"
+    "description": "PL-C rotatable Frosted/Daylight/Warm White",
+    "dealerPrice": "394"
   },
   {
     "code": "MEOQ-3WTH",
-    "description": "3W/E27 Daylight/Warm White 1year warranty",
-    "dealerPrice": "40.50"
+    "description": "3W/ E27 Daylight/Warm white 1year warranty",
+    "dealerPrice": "50.63"
   },
   {
     "code": "MECQ-6WTH",
-    "description": "6W/E27 Daylight/Warm White 1year warranty",
-    "dealerPrice": "59.85"
+    "description": "6W/ E27 Daylight/Warm white 1year warranty",
+    "dealerPrice": "74.81"
   },
   {
     "code": "MECQ-9WTH",
-    "description": "9W/E27 Daylight/Warm White 1year warranty",
-    "dealerPrice": "71.85"
+    "description": "9W/ E27 Daylight/Warm white 1year warranty",
+    "dealerPrice": "89.81"
   },
   {
     "code": "MECQ-12WTH",
-    "description": "12W/E27 Daylight/Warm White 1year warranty",
-    "dealerPrice": "112.50"
+    "description": "12W/ E27 Daylight/Warm white 1year warranty",
+    "dealerPrice": "140.63"
   },
   {
     "code": "MECQ-15WTH",
-    "description": "15W/E27 Daylight/Warm White 1year warranty",
-    "dealerPrice": "135.00"
+    "description": "15W/ E27 Daylight/Warm white 1year warranty",
+    "dealerPrice": "168.50"
   },
   {
     "code": "MECB-20WTH",
-    "description": "20W/E27 Daylight/Warm White 1year warranty",
-    "dealerPrice": "233.85"
+    "description": "20W/ E27 Daylight/Warm white 1year warranty",
+    "dealerPrice": "292.31"
   },
   {
     "code": "MECB-30WT",
-    "description": "30W/E27 Daylight/Warm White 1year warranty",
-    "dealerPrice": "329.85"
+    "description": "30W/ E27 Daylight/Warm white 1year warranty",
+    "dealerPrice": "412.31"
   },
   {
     "code": "MLTQ-3W5TQ",
-    "description": "3.5W E14 Daylight/Warm White 1year warranty",
-    "dealerPrice": "60.50"
+    "description": "3.5W E14 Daylight/Warm white 1year warranty",
+    "dealerPrice": "74.80"
   },
   {
     "code": "MY8B-9WT",
-    "description": "8W/T8/0.6M Daylight/Warm White 1year warranty",
-    "dealerPrice": "119.85"
+    "description": "8W/T8/0.6M Daylight/Warm white 1year warranty",
+    "dealerPrice": "149.71"
   },
   {
     "code": "MY8A-18WT",
-    "description": "18W/T8/1.2M Daylight/Warm White 1year warranty",
-    "dealerPrice": "143.85"
+    "description": "18W/T8/1.2M Daylight/Warm white 1year warranty",
+    "dealerPrice": "179.81"
   },
   {
     "code": "MT5BY-9WTQ",
-    "description": "9W/T5/0.6M Daylight/Warm White 1year warranty",
-    "dealerPrice": "158.85"
+    "description": "9W/T5/0.6M Daylight8/Warm white 1year warranty",
+    "dealerPrice": "198.56"
   },
   {
     "code": "MT5DY-14WTQ",
-    "description": "14W/T5/0.9M Daylight/Warm White 1year warranty",
-    "dealerPrice": "176.85"
+    "description": "14W/T5/0.9M Daylight/Warm white 1year warranty",
+    "dealerPrice": "221.06"
   },
   {
     "code": "MT5AY-18WTQ",
-    "description": "18W/T5/1.2M Daylight/Warm White 1year warranty",
-    "dealerPrice": "191.85"
+    "description": "18W/T5/1.2M Daylight/Warm white 1year warranty",
+    "dealerPrice": "239.81"
   },
   {
     "code": "MY5EY-5WTQ",
-    "description": "5W/T5/0.3M Daylight/Warm White 1year warranty",
-    "dealerPrice": "105"
+    "description": "5W/T5/0.3M Daylight/Warm white 1year warranty",
+    "dealerPrice": "131.25"
   },
   {
     "code": "ZX4B-9WT",
     "description": "9W/4 inches Daylight/Warm White 1year warranty",
-    "dealerPrice": "180.00"
+    "dealerPrice": "225.00"
   },
   {
     "code": "ZX6B-15WT",
     "description": "15W/6 inches Daylight/Warm White 1year warranty",
-    "dealerPrice": "258.00"
+    "dealerPrice": "322.00"
   },
   {
     "code": "ZX8B-24WT",
     "description": "24W/8 inches Daylight/Warm White 1year warranty",
-    "dealerPrice": "318.00"
+    "dealerPrice": "397.00"
   },
   {
     "code": "TMF60-43W",
-    "description": "TMF 60-43W",
-    "dealerPrice": "2,453"
-  },
-  {
-    "code": "TGU-4WQ-WW",
-    "description": "GU10 4W Warm White 5 years warranty",
-    "dealerPrice": "344.00"
-  },
-  {
-    "code": "TLG-120W",
-    "description": "Streetlight 120W Cool White 5 Years Warranty",
-    "dealerPrice": "16,965"
+    "description": "",
+    "dealerPrice": "3,066"
   }
 ]

@@ -311,3 +311,75 @@ function escapeHtml(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+
+// --- Upload Modal ---
+const uploadModal = document.getElementById('uploadModal');
+const openUploadBtn = document.getElementById('openUploadBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const docxFileInput = document.getElementById('docxFileInput');
+const fileNameDisplay = document.getElementById('fileNameDisplay');
+const uploadDocxBtn = document.getElementById('uploadDocxBtn');
+const uploadStatus = document.getElementById('uploadStatus');
+
+openUploadBtn.addEventListener('click', () => {
+    uploadModal.classList.add('open');
+    uploadStatus.textContent = '';
+    uploadStatus.className = 'upload-status';
+    docxFileInput.value = '';
+    fileNameDisplay.textContent = 'No file chosen';
+    uploadDocxBtn.disabled = true;
+});
+
+closeModalBtn.addEventListener('click', () => {
+    uploadModal.classList.remove('open');
+});
+
+uploadModal.addEventListener('click', (e) => {
+    if (e.target === uploadModal) {
+        uploadModal.classList.remove('open');
+    }
+});
+
+docxFileInput.addEventListener('change', () => {
+    const file = docxFileInput.files[0];
+    if (file) {
+        fileNameDisplay.textContent = file.name;
+        uploadDocxBtn.disabled = false;
+    } else {
+        fileNameDisplay.textContent = 'No file chosen';
+        uploadDocxBtn.disabled = true;
+    }
+});
+
+uploadDocxBtn.addEventListener('click', async () => {
+    const file = docxFileInput.files[0];
+    if (!file) return;
+
+    uploadDocxBtn.disabled = true;
+    uploadDocxBtn.textContent = 'Uploading...';
+    uploadStatus.textContent = '';
+    uploadStatus.className = 'upload-status';
+
+    try {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        const response = await fetch('/upload', { method: 'POST', body: formData });
+        const result = await response.json();
+
+        if (result.success) {
+            uploadStatus.textContent = `✓ ${result.message}`;
+            uploadStatus.className = 'upload-status success';
+            await loadProductData();
+        } else {
+            uploadStatus.textContent = `✗ ${result.error}`;
+            uploadStatus.className = 'upload-status error';
+        }
+    } catch {
+        uploadStatus.textContent = '✗ Upload failed. Make sure you started the app with server.py, not python3 -m http.server.';
+        uploadStatus.className = 'upload-status error';
+    }
+
+    uploadDocxBtn.disabled = false;
+    uploadDocxBtn.textContent = 'Upload & Update';
+});
