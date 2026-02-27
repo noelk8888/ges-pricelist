@@ -16,6 +16,7 @@ const clearBtn = document.getElementById('clearBtn');
 const resultsContainer = document.getElementById('resultsContainer');
 const selectionCount = document.getElementById('selectionCount');
 const generateQuoteBtn = document.getElementById('generateQuoteBtn');
+const copyBtn = document.getElementById('copyBtn');
 const showAllBtn = document.getElementById('showAllBtn');
 
 // Load product data
@@ -108,6 +109,17 @@ generateQuoteBtn.addEventListener('click', () => {
         }
     }
     displayResults(quoteItems, true);
+});
+
+// Copy to Clipboard button
+copyBtn.addEventListener('click', () => {
+    copyResults();
+    copyBtn.textContent = 'Copied!';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+        copyBtn.textContent = 'Copy';
+        copyBtn.classList.remove('copied');
+    }, 2000);
 });
 
 // Show All Results button
@@ -277,9 +289,6 @@ function displayResults(results, isQuote = false) {
                 Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.
             </div>
         </div>
-        <div class="copy-btn-container">
-            <button class="copy-btn" onclick="copyResults()">Copy to Clipboard</button>
-        </div>
     `;
 
     resultsContainer.innerHTML = html;
@@ -373,16 +382,7 @@ function copyResults() {
     textOutput += `Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.`;
 
     // Copy to clipboard
-    navigator.clipboard.writeText(textOutput).then(() => {
-        const btn = document.querySelector('.copy-btn');
-        btn.textContent = 'Copied!';
-        btn.classList.add('copied');
-
-        setTimeout(() => {
-            btn.textContent = 'Copy to Clipboard';
-            btn.classList.remove('copied');
-        }, 2000);
-    }).catch(err => {
+    navigator.clipboard.writeText(textOutput).catch(err => {
         console.error('Failed to copy:', err);
         alert('Failed to copy to clipboard. Please select and copy manually.');
     });
