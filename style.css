@@ -361,11 +361,10 @@ body {
 
 /* Quote display items */
 .item-qty {
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: bold;
     color: #4CAF50;
-    margin-bottom: 4px;
-    letter-spacing: 0.5px;
+    margin-bottom: 5px;
 }
 
 .quote-item {

@@ -390,14 +390,16 @@ function copyResults() {
 
 // Format description for copied text: remove colors, shorten warranty
 function formatDescriptionForCopy(description) {
-    if (!description) return '';
+    const yrs = (n) => n === '1' ? '1yr' : `${n}yrs`;
+
+    if (!description) return '(1yr warranty)';
 
     // Match color section (Daylight / Cool White / Warm White variants) right before warranty
     const colorWarrantyRe = /\s*(?:(?:Daylight|Cool\s+[Ww]hite|Warm\s+[Ww]hite|White)\/?)+\s*(\d+)\s*years?\s+warranty/i;
     let match = description.match(colorWarrantyRe);
     if (match) {
         const spec = description.replace(colorWarrantyRe, '').trim();
-        return `${spec} (${match[1]}yrs warranty)`;
+        return `${spec} (${yrs(match[1])} warranty)`;
     }
 
     // Handle warranty with no preceding color section
@@ -405,10 +407,11 @@ function formatDescriptionForCopy(description) {
     match = description.match(warrantyRe);
     if (match) {
         const spec = description.replace(warrantyRe, '').trim();
-        return spec ? `${spec} (${match[1]}yrs warranty)` : `(${match[1]}yrs warranty)`;
+        return spec ? `${spec} (${yrs(match[1])} warranty)` : `(${yrs(match[1])} warranty)`;
     }
 
-    return description;
+    // No warranty info found — default to 1yr
+    return `${description} (1yr warranty)`.trim();
 }
 
 // Helper function to escape HTML
