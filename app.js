@@ -1,7 +1,7 @@
 // Global state
 let productsData = [];
 let currentCompanyName = '';
-let selectedProducts = new Set(); // Track selected products by code
+let selectedProducts = new Map(); // code → { dl: qty|null, ww: qty|null }
 let isQuoteMode = false; // Track if showing quote or all results
 
 // DOM Elements
@@ -97,9 +97,17 @@ generateQuoteBtn.addEventListener('click', () => {
     isQuoteMode = true;
     showAllBtn.style.display = 'inline-block';
 
-    // Get selected products
-    const selectedItems = productsData.filter(p => selectedProducts.has(p.code));
-    displayResults(selectedItems, true);
+    const quoteItems = [];
+    for (const [code, variants] of selectedProducts) {
+        const product = productsData.find(p => p.code === code);
+        if (!product) continue;
+        if (variants.dl !== null) quoteItems.push({ ...product, _variant: 'dl', _qty: variants.dl });
+        if (variants.ww !== null) quoteItems.push({ ...product, _variant: 'ww', _qty: variants.ww });
+        if (variants.dl === null && variants.ww === null) {
+            quoteItems.push({ ...product, _variant: null, _qty: null });
+        }
+    }
+    displayResults(quoteItems, true);
 });
 
 // Show All Results button
@@ -155,38 +163,38 @@ function performSearch(searchTerm) {
 
 // Format price with peso sign and /pc
 function formatPrice(priceStr) {
-    // Remove commas and parse
-    const cleanPrice = priceStr.replace(/,/g, '');
     return `₱${priceStr}/pc`;
 }
 
 // Update selection UI
 function updateSelectionUI() {
-    selectionCount.textContent = `Selected: ${selectedProducts.size}/10`;
+    selectionCount.textContent = `Selected: ${selectedProducts.size}/20`;
     generateQuoteBtn.disabled = selectedProducts.size === 0;
 }
 
 // Handle checkbox change
 function handleCheckboxChange(e, productCode) {
     if (e.target.checked) {
-        if (selectedProducts.size >= 10) {
+        if (selectedProducts.size >= 20) {
             e.target.checked = false;
-            alert('Maximum 10 items can be selected for a quote');
+            alert('Maximum 20 items can be selected for a quote');
             return;
         }
-        selectedProducts.add(productCode);
+        selectedProducts.set(productCode, { dl: null, ww: null });
     } else {
         selectedProducts.delete(productCode);
     }
 
     updateSelectionUI();
 
-    // Update visual state
     const item = e.target.closest('.result-item');
+    const panel = item.querySelector('.color-qty-panel');
     if (e.target.checked) {
         item.classList.add('selected');
+        if (panel) panel.style.display = 'flex';
     } else {
         item.classList.remove('selected');
+        if (panel) panel.style.display = 'none';
     }
 }
 
@@ -204,7 +212,6 @@ function displayResults(results, isQuote = false) {
         day: 'numeric'
     });
 
-    // Updated header format: "COMPANY NAME (Dealer's Price)"
     let html = `
         <div class="results-header">
             <div class="company-name">${escapeHtml(currentCompanyName)} (Dealer's Price)</div>
@@ -213,20 +220,54 @@ function displayResults(results, isQuote = false) {
     `;
 
     results.forEach(product => {
-        const isChecked = selectedProducts.has(product.code);
-        const selectedClass = isChecked ? 'selected' : '';
+        if (isQuote) {
+            const suffix = product._variant ? '-' + product._variant.toUpperCase() : '';
+            html += `
+                <div class="result-item quote-item">
+                    ${product._qty ? `<div class="item-qty">${product._qty} PCS</div>` : ''}
+                    <div class="product-code">${escapeHtml(product.code)}${suffix}</div>
+                    <div class="product-description">${escapeHtml(formatDescriptionForCopy(product.description))}</div>
+                    <div class="product-price">${formatPrice(product.dealerPrice)}</div>
+                </div>
+            `;
+        } else {
+            const isChecked = selectedProducts.has(product.code);
+            const selectedClass = isChecked ? 'selected' : '';
+            const variants = selectedProducts.get(product.code) || { dl: null, ww: null };
+            const dlChecked = variants.dl !== null;
+            const wwChecked = variants.ww !== null;
+            const code = escapeHtml(product.code);
 
-        html += `
-            <div class="result-item ${selectedClass}">
-                ${!isQuote ? `<input type="checkbox" class="result-checkbox" 
-                    data-code="${escapeHtml(product.code)}" 
-                    ${isChecked ? 'checked' : ''}
-                    ${selectedProducts.size >= 5 && !isChecked ? 'disabled' : ''}>` : ''}
-                <div class="product-code">${escapeHtml(product.code)}</div>
-                <div class="product-description">${escapeHtml(product.description)}</div>
-                <div class="product-price">${formatPrice(product.dealerPrice)}</div>
-            </div>
-        `;
+            html += `
+                <div class="result-item ${selectedClass}">
+                    <input type="checkbox" class="result-checkbox"
+                        data-code="${code}"
+                        ${isChecked ? 'checked' : ''}
+                        ${selectedProducts.size >= 20 && !isChecked ? 'disabled' : ''}>
+                    <div class="product-code">${code}</div>
+                    <div class="product-description">${escapeHtml(product.description)}</div>
+                    <div class="product-price">${formatPrice(product.dealerPrice)}</div>
+                    <div class="color-qty-panel"${isChecked ? '' : ' style="display:none"'}>
+                        <div class="color-row">
+                            <label class="color-label">
+                                <input type="checkbox" class="color-check" data-color="dl" data-code="${code}" ${dlChecked ? 'checked' : ''}>
+                                <span class="color-tag dl-tag">DL</span>
+                            </label>
+                            <input type="number" class="qty-input" data-color="dl" data-code="${code}"
+                                min="1" value="${variants.dl || ''}" placeholder="qty"${dlChecked ? '' : ' style="display:none"'}>
+                        </div>
+                        <div class="color-row">
+                            <label class="color-label">
+                                <input type="checkbox" class="color-check" data-color="ww" data-code="${code}" ${wwChecked ? 'checked' : ''}>
+                                <span class="color-tag ww-tag">WW</span>
+                            </label>
+                            <input type="number" class="qty-input" data-color="ww" data-code="${code}"
+                                min="1" value="${variants.ww || ''}" placeholder="qty"${wwChecked ? '' : ' style="display:none"'}>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
     });
 
     html += `
@@ -244,12 +285,43 @@ function displayResults(results, isQuote = false) {
     resultsContainer.innerHTML = html;
     resultsContainer.classList.add('show');
 
-    // Add event listeners to checkboxes (only if not in quote mode)
     if (!isQuote) {
-        const checkboxes = resultsContainer.querySelectorAll('.result-checkbox');
-        checkboxes.forEach(checkbox => {
+        resultsContainer.querySelectorAll('.result-checkbox').forEach(checkbox => {
             checkbox.addEventListener('change', (e) => {
                 handleCheckboxChange(e, checkbox.dataset.code);
+            });
+        });
+
+        resultsContainer.querySelectorAll('.color-check').forEach(cb => {
+            cb.addEventListener('change', (e) => {
+                const code = e.target.dataset.code;
+                const color = e.target.dataset.color;
+                const row = e.target.closest('.color-row');
+                const qtyInput = row.querySelector('.qty-input');
+                const variants = selectedProducts.get(code) || { dl: null, ww: null };
+
+                if (e.target.checked) {
+                    qtyInput.style.display = 'inline-block';
+                    qtyInput.focus();
+                } else {
+                    qtyInput.style.display = 'none';
+                    qtyInput.value = '';
+                    variants[color] = null;
+                    selectedProducts.set(code, variants);
+                }
+                updateSelectionUI();
+            });
+        });
+
+        resultsContainer.querySelectorAll('.qty-input').forEach(input => {
+            input.addEventListener('input', (e) => {
+                const code = e.target.dataset.code;
+                const color = e.target.dataset.color;
+                const qty = parseInt(e.target.value);
+                const variants = selectedProducts.get(code) || { dl: null, ww: null };
+                variants[color] = qty > 0 ? qty : null;
+                selectedProducts.set(code, variants);
+                updateSelectionUI();
             });
         });
     }
@@ -263,29 +335,40 @@ function copyResults() {
         day: 'numeric'
     });
 
-    let results;
+    // Build plain text version
+    let textOutput = `${currentCompanyName} (Dealer's Price)\n========\n\n`;
 
-    // If in quote mode, copy only selected items
     if (isQuoteMode && selectedProducts.size > 0) {
-        results = productsData.filter(p => selectedProducts.has(p.code));
+        for (const [code, variants] of selectedProducts) {
+            const product = productsData.find(p => p.code === code);
+            if (!product) continue;
+            const desc = formatDescriptionForCopy(product.description);
+
+            const entries = [];
+            if (variants.dl !== null) entries.push({ suffix: '-DL', qty: variants.dl });
+            if (variants.ww !== null) entries.push({ suffix: '-WW', qty: variants.ww });
+            if (entries.length === 0) entries.push({ suffix: '', qty: null });
+
+            for (const entry of entries) {
+                if (entry.qty) textOutput += `${entry.qty} PCS\n`;
+                textOutput += `${code}${entry.suffix}\n`;
+                textOutput += `${desc}\n`;
+                textOutput += `₱${product.dealerPrice}/pc\n\n`;
+            }
+        }
     } else {
-        // Otherwise copy current search results
         const searchTerm = searchInput.value.trim().toLowerCase();
-        results = productsData.filter(product => {
+        const results = productsData.filter(product => {
             const codeMatch = product.code.toLowerCase().includes(searchTerm);
             const descMatch = product.description.toLowerCase().includes(searchTerm);
             return codeMatch || descMatch;
         });
+        results.forEach(product => {
+            textOutput += `${product.code}\n`;
+            textOutput += `${formatDescriptionForCopy(product.description)}\n`;
+            textOutput += `₱${product.dealerPrice}/pc\n\n`;
+        });
     }
-
-    // Build plain text version with new header format
-    let textOutput = `${currentCompanyName} (Dealer's Price)\n\n`;
-
-    results.forEach(product => {
-        textOutput += `${product.code}\n`;
-        textOutput += `${product.description}\n`;
-        textOutput += `₱${product.dealerPrice}/pc\n\n`;
-    });
 
     textOutput += `Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.`;
 
@@ -303,6 +386,29 @@ function copyResults() {
         console.error('Failed to copy:', err);
         alert('Failed to copy to clipboard. Please select and copy manually.');
     });
+}
+
+// Format description for copied text: remove colors, shorten warranty
+function formatDescriptionForCopy(description) {
+    if (!description) return '';
+
+    // Match color section (Daylight / Cool White / Warm White variants) right before warranty
+    const colorWarrantyRe = /\s*(?:(?:Daylight|Cool\s+[Ww]hite|Warm\s+[Ww]hite|White)\/?)+\s*(\d+)\s*years?\s+warranty/i;
+    let match = description.match(colorWarrantyRe);
+    if (match) {
+        const spec = description.replace(colorWarrantyRe, '').trim();
+        return `${spec} (${match[1]}yrs warranty)`;
+    }
+
+    // Handle warranty with no preceding color section
+    const warrantyRe = /\s*(\d+)\s*years?\s+warranty/i;
+    match = description.match(warrantyRe);
+    if (match) {
+        const spec = description.replace(warrantyRe, '').trim();
+        return spec ? `${spec} (${match[1]}yrs warranty)` : `(${match[1]}yrs warranty)`;
+    }
+
+    return description;
 }
 
 // Helper function to escape HTML

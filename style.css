@@ -297,6 +297,81 @@ body {
     margin-top: 8px;
 }
 
+/* Color/Qty panel (inside black results box) */
+.color-qty-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border: 1px solid #2a2a2a;
+}
+
+.color-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.color-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    min-width: 36px;
+    text-align: center;
+}
+
+.dl-tag {
+    background: #1565C0;
+    color: white;
+}
+
+.ww-tag {
+    background: #B45309;
+    color: white;
+}
+
+.qty-input {
+    width: 70px;
+    padding: 5px 8px;
+    font-size: 14px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+.qty-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Quote display items */
+.item-qty {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4CAF50;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.quote-item {
+    padding-left: 0;
+}
+
 .no-results {
     text-align: center;
     padding: 40px;
