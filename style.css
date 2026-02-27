@@ -158,6 +158,27 @@ body {
     background: #0b7dda;
 }
 
+.copy-top-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: 10px;
+}
+
+.copy-top-btn:hover {
+    background: #0b7dda;
+}
+
+.copy-top-btn.copied {
+    background: #4CAF50;
+}
+
 .search-bar {
     display: flex;
     gap: 10px;
