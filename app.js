@@ -236,7 +236,7 @@ function displayResults(results, isQuote = false) {
             const suffix = product._variant ? '-' + product._variant.toUpperCase() : '';
             html += `
                 <div class="result-item quote-item">
-                    ${product._qty ? `<div class="item-qty">${product._qty} PCS</div>` : ''}
+                    ${product._qty ? `<div class="item-qty">${product._qty === 1 ? '1pc' : `${product._qty} pcs`}</div>` : ''}
                     <div class="product-code">${escapeHtml(product.code)}${suffix}</div>
                     <div class="product-description">${escapeHtml(formatDescriptionForCopy(product.description))}</div>
                     <div class="product-price">${formatPrice(product.dealerPrice)}</div>
@@ -359,7 +359,7 @@ function copyResults() {
             if (entries.length === 0) entries.push({ suffix: '', qty: null });
 
             for (const entry of entries) {
-                if (entry.qty) textOutput += `${entry.qty} PCS\n`;
+                if (entry.qty) textOutput += `${entry.qty === 1 ? '1pc' : `${entry.qty} pcs`}\n`;
                 textOutput += `${code}${entry.suffix}\n`;
                 textOutput += `${desc}\n`;
                 textOutput += `₱${product.dealerPrice}/pc\n\n`;
