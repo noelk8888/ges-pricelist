@@ -286,7 +286,7 @@ function displayResults(results, isQuote = false) {
         </div>
         <div class="results-footer">
             <div class="footer-disclaimer">
-                Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.
+                💡 Prices quoted are subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.
             </div>
         </div>
     `;
@@ -310,6 +310,8 @@ function displayResults(results, isQuote = false) {
                 const variants = selectedProducts.get(code) || { dl: null, ww: null };
 
                 if (e.target.checked) {
+                    variants[color] = 0;
+                    selectedProducts.set(code, variants);
                     qtyInput.style.display = 'inline-block';
                     qtyInput.focus();
                 } else {
@@ -328,7 +330,7 @@ function displayResults(results, isQuote = false) {
                 const color = e.target.dataset.color;
                 const qty = parseInt(e.target.value);
                 const variants = selectedProducts.get(code) || { dl: null, ww: null };
-                variants[color] = qty > 0 ? qty : null;
+                variants[color] = qty > 0 ? qty : 0;
                 selectedProducts.set(code, variants);
                 updateSelectionUI();
             });
@@ -379,7 +381,7 @@ function copyResults() {
         });
     }
 
-    textOutput += `Prices subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.`;
+    textOutput += `💡 Prices quoted are subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.`;
 
     // Copy to clipboard
     navigator.clipboard.writeText(textOutput).catch(err => {
