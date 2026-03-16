@@ -318,6 +318,31 @@ body {
     margin-top: 8px;
 }
 
+.footer-links {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-link {
+    color: #64b5f6;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: #90caf9;
+}
+
+.footer-link-sep {
+    color: #666;
+    font-size: 13px;
+}
+
 /* Color/Qty panel (inside black results box) */
 .color-qty-panel {
     display: flex;
