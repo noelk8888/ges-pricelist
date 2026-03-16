@@ -288,34 +288,13 @@ function displayResults(results, isQuote = false) {
             <div class="footer-disclaimer">
                 💡 Prices quoted are subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.
             </div>
-            <div class="footer-links">
-                <span class="footer-link" id="copyCompanyBtn">Centron Energy Savings</span>
-                <span class="footer-link-sep">|</span>
-                <span class="footer-link" id="copyBankBtn">Bank Details</span>
+            <div class="footer-company">
+                <div class="footer-sep">==========</div>
+                <div>Centron Energy Savings Technology Corporation</div>
+                <div>www.gesled.blogspot.com</div>
             </div>
         </div>
     `;
-
-    resultsContainer.innerHTML = html;
-    resultsContainer.classList.add('show');
-
-    const copyCompanyBtn = document.getElementById('copyCompanyBtn');
-    if (copyCompanyBtn) {
-        copyCompanyBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText('CENTRON ENERGY SAVINGS TECHNOLOGY CORPORATION\nAddress: 8390 Dr. Arcadio Santos Ave., BF Homes Parañaque City\nTIN # 008-013-400-000');
-            copyCompanyBtn.textContent = 'Copied!';
-            setTimeout(() => { copyCompanyBtn.textContent = 'Centron Energy Savings'; }, 2000);
-        });
-    }
-
-    const copyBankBtn = document.getElementById('copyBankBtn');
-    if (copyBankBtn) {
-        copyBankBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText('Account Name: Centron Energy Savings Technology Corp.\nAccount Number: Metrobank - 150-7-15051630-3');
-            copyBankBtn.textContent = 'Copied!';
-            setTimeout(() => { copyBankBtn.textContent = 'Bank Details'; }, 2000);
-        });
-    }
 
     if (!isQuote) {
         resultsContainer.querySelectorAll('.result-checkbox').forEach(checkbox => {
@@ -404,7 +383,10 @@ function copyResults() {
         });
     }
 
-    textOutput += `💡 Prices quoted are subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.`;
+    textOutput += `💡 Prices quoted are subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.\n`;
+    textOutput += `==========\n`;
+    textOutput += `Centron Energy Savings Technology Corporation\n`;
+    textOutput += `www.gesled.blogspot.com`;
 
     // Copy to clipboard
     navigator.clipboard.writeText(textOutput).catch(err => {
