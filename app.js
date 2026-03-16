@@ -296,6 +296,9 @@ function displayResults(results, isQuote = false) {
         </div>
     `;
 
+    resultsContainer.innerHTML = html;
+    resultsContainer.classList.add('show');
+
     if (!isQuote) {
         resultsContainer.querySelectorAll('.result-checkbox').forEach(checkbox => {
             checkbox.addEventListener('change', (e) => {
