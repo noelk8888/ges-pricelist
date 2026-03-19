@@ -143,21 +143,17 @@ function performSearch(searchTerm) {
         const descMatch = product.description.toLowerCase().includes(lowerSearchTerm);
         return codeMatch || descMatch;
     }).sort((a, b) => {
-        // Smart sorting: prioritize exact code matches, then code partial, then description
         const aCodeLower = a.code.toLowerCase();
         const bCodeLower = b.code.toLowerCase();
         const aDescLower = a.description.toLowerCase();
         const bDescLower = b.description.toLowerCase();
 
-        // Exact code match (highest priority)
         if (aCodeLower === lowerSearchTerm && bCodeLower !== lowerSearchTerm) return -1;
         if (bCodeLower === lowerSearchTerm && aCodeLower !== lowerSearchTerm) return 1;
 
-        // Code starts with search term
         if (aCodeLower.startsWith(lowerSearchTerm) && !bCodeLower.startsWith(lowerSearchTerm)) return -1;
         if (bCodeLower.startsWith(lowerSearchTerm) && !aCodeLower.startsWith(lowerSearchTerm)) return 1;
 
-        // Code contains (but description doesn't)
         const aCodeMatch = aCodeLower.includes(lowerSearchTerm);
         const bCodeMatch = bCodeLower.includes(lowerSearchTerm);
         const aDescMatch = aDescLower.includes(lowerSearchTerm);
@@ -166,7 +162,6 @@ function performSearch(searchTerm) {
         if (aCodeMatch && !aDescMatch && (!bCodeMatch || bDescMatch)) return -1;
         if (bCodeMatch && !bDescMatch && (!aCodeMatch || aDescMatch)) return 1;
 
-        // Default alphabetical by code
         return aCodeLower.localeCompare(bCodeLower);
     });
 
@@ -218,7 +213,10 @@ function displayResults(results, isQuote = false) {
         return;
     }
 
-    const currentDate = new Date().toLocaleDateString('en-US', {
+    // Calculate valid until date (30 days from today)
+    const validUntil = new Date();
+    validUntil.setDate(validUntil.getDate() + 30);
+    const validUntilStr = validUntil.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
@@ -226,7 +224,9 @@ function displayResults(results, isQuote = false) {
 
     let html = `
         <div class="results-header">
-            <div class="company-name">${escapeHtml(currentCompanyName)} (Dealer's Price)</div>
+            <div class="company-name">${escapeHtml(currentCompanyName)} (Discounted Price)</div>
+            <div class="results-divider">========</div>
+            <div class="valid-until">Price valid until ${validUntilStr}</div>
         </div>
         <div class="results-list">
     `;
@@ -286,7 +286,8 @@ function displayResults(results, isQuote = false) {
         </div>
         <div class="results-footer">
             <div class="footer-disclaimer">
-                💡 Prices quoted are subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.
+                💡 Prices are subject to change. Stocks subject to availability. VAT-in.<br>
+                PROMO: &nbsp;Free delivery within MM with min purchase of Php 1000 only
             </div>
             <div class="footer-company">
                 <div class="footer-sep">==========</div>
@@ -345,14 +346,17 @@ function displayResults(results, isQuote = false) {
 
 // Copy results to clipboard as plain text
 function copyResults() {
-    const currentDate = new Date().toLocaleDateString('en-US', {
+    // Calculate valid until date (30 days from today)
+    const validUntil = new Date();
+    validUntil.setDate(validUntil.getDate() + 30);
+    const validUntilStr = validUntil.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
     });
 
     // Build plain text version
-    let textOutput = `${currentCompanyName} (Dealer's Price)\n========\n\n`;
+    let textOutput = `${currentCompanyName} (Discounted Price)\n========\nPrice valid until ${validUntilStr}\n\n`;
 
     if (isQuoteMode && selectedProducts.size > 0) {
         for (const [code, variants] of selectedProducts) {
@@ -386,7 +390,8 @@ function copyResults() {
         });
     }
 
-    textOutput += `💡 Prices quoted are subject to change. Stocks subject to availability. VAT inclusive. Warranty as specified. Price valid as of ${currentDate}.\n`;
+    textOutput += `💡 Prices are subject to change. Stocks subject to availability. VAT-in.\n`;
+    textOutput += `PROMO:  Free delivery within MM with min purchase of Php 1000 only\n`;
     textOutput += `==========\n`;
     textOutput += `Centron Energy Savings Technology Corporation\n`;
     textOutput += `www.gesled.blogspot.com`;
