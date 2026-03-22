@@ -325,7 +325,7 @@ function displayResults(results, isQuote = false) {
         <div class="results-footer">
             <div class="footer-disclaimer">
                 💡 Prices are subject to change. Stocks subject to availability. VAT-in.<br>
-                PROMO: &nbsp;Free delivery within MM with min purchase of Php 1000 only
+                PROMO: &nbsp;Free delivery within MM with min purchase of Php 1,000 only
             </div>
             <div class="footer-company">
                 <div class="footer-sep">==========</div>
@@ -439,7 +439,7 @@ function copyResults() {
     }
 
     textOutput += `💡 Prices are subject to change. Stocks subject to availability. VAT-in.\n`;
-    textOutput += `PROMO:  Free delivery within MM with min purchase of Php 1000 only\n`;
+    textOutput += `PROMO:  Free delivery within MM with min purchase of Php 1,000 only\n`;
     textOutput += `==========\n`;
     textOutput += `Centron Energy Savings Technology Corporation\n`;
     textOutput += `www.gesled.blogspot.com`;
