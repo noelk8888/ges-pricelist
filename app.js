@@ -18,6 +18,7 @@ const selectionCount = document.getElementById('selectionCount');
 const generateQuoteBtn = document.getElementById('generateQuoteBtn');
 const copyBtn = document.getElementById('copyBtn');
 const showAllBtn = document.getElementById('showAllBtn');
+const showTotalToggle = document.getElementById('showTotalToggle');
 
 // Load product data
 async function loadProductData() {
@@ -134,6 +135,13 @@ showAllBtn.addEventListener('click', () => {
     }
 });
 
+// Show Total toggle
+showTotalToggle.addEventListener('change', () => {
+    if (isQuoteMode) {
+        generateQuoteBtn.click();
+    }
+});
+
 // Perform search with improved smart matching
 function performSearch(searchTerm) {
     const lowerSearchTerm = searchTerm.toLowerCase();
@@ -171,6 +179,18 @@ function performSearch(searchTerm) {
 // Format price with peso sign and /pc
 function formatPrice(priceStr) {
     return `₱${priceStr}/pc`;
+}
+
+// Parse price string to number
+function parsePrice(priceStr) {
+    if (!priceStr) return 0;
+    const normalized = priceStr.replace(/,/g, '');
+    return parseFloat(normalized) || 0;
+}
+
+// Format number as currency string
+function formatCurrency(amount) {
+    return amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 // Update selection UI
@@ -231,15 +251,24 @@ function displayResults(results, isQuote = false) {
         <div class="results-list">
     `;
 
+    let totalAmount = 0;
+    const showTotal = showTotalToggle.checked;
+
     results.forEach(product => {
         if (isQuote) {
             const suffix = product._variant ? '-' + product._variant.toUpperCase() : '';
+            const qty = product._qty || 1;
+            const price = parsePrice(product.dealerPrice);
+            const subtotal = qty * price;
+            totalAmount += subtotal;
+
             html += `
                 <div class="result-item quote-item">
-                    ${product._qty ? `<div class="item-qty">${product._qty === 1 ? '1pc' : `${product._qty} pcs`}</div>` : ''}
+                    <div class="item-qty">${qty === 1 ? '1pc' : `${qty} pcs`}</div>
                     <div class="product-code">${escapeHtml(product.code)}${suffix}</div>
                     <div class="product-description">${escapeHtml(formatDescriptionForCopy(product.description))}</div>
                     <div class="product-price">${formatPrice(product.dealerPrice)}</div>
+                    <div class="product-subtotal">Subtotal: ₱${formatCurrency(subtotal)}</div>
                 </div>
             `;
         } else {
@@ -281,6 +310,15 @@ function displayResults(results, isQuote = false) {
             `;
         }
     });
+    
+    if (isQuote && showTotal) {
+        html += `
+            <div class="results-total">
+                <div class="total-label">TOTAL</div>
+                <div class="total-value">₱${formatCurrency(totalAmount)}</div>
+            </div>
+        `;
+    }
 
     html += `
         </div>
@@ -357,24 +395,34 @@ function copyResults() {
 
     // Build plain text version
     let textOutput = `${currentCompanyName} (Discounted Price)\n========\nPrice valid until ${validUntilStr}\n\n`;
+    let totalAmount = 0;
 
     if (isQuoteMode && selectedProducts.size > 0) {
         for (const [code, variants] of selectedProducts) {
             const product = productsData.find(p => p.code === code);
             if (!product) continue;
             const desc = formatDescriptionForCopy(product.description);
+            const price = parsePrice(product.dealerPrice);
 
             const entries = [];
-            if (variants.dl !== null) entries.push({ suffix: '-DL', qty: variants.dl });
-            if (variants.ww !== null) entries.push({ suffix: '-WW', qty: variants.ww });
-            if (entries.length === 0) entries.push({ suffix: '', qty: null });
+            if (variants.dl !== null) entries.push({ suffix: '-DL', qty: variants.dl || 1 });
+            if (variants.ww !== null) entries.push({ suffix: '-WW', qty: variants.ww || 1 });
+            if (entries.length === 0) entries.push({ suffix: '', qty: 1 });
 
             for (const entry of entries) {
-                if (entry.qty) textOutput += `${entry.qty === 1 ? '1pc' : `${entry.qty} pcs`}\n`;
+                const subtotal = entry.qty * price;
+                totalAmount += subtotal;
+
+                textOutput += `${entry.qty === 1 ? '1pc' : `${entry.qty} pcs`}\n`;
                 textOutput += `${code}${entry.suffix}\n`;
                 textOutput += `${desc}\n`;
-                textOutput += `₱${product.dealerPrice}/pc\n\n`;
+                textOutput += `₱${product.dealerPrice}/pc\n`;
+                textOutput += `Subtotal: ₱${formatCurrency(subtotal)}\n\n`;
             }
+        }
+
+        if (showTotalToggle.checked) {
+            textOutput += `TOTAL: ₱${formatCurrency(totalAmount)}\n\n`;
         }
     } else {
         const searchTerm = searchInput.value.trim().toLowerCase();
