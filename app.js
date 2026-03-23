@@ -332,6 +332,11 @@ function displayResults(results, isQuote = false) {
                 <div>Centron Energy Savings Technology Corporation</div>
                 <div>www.gesled.blogspot.com</div>
             </div>
+            <div class="footer-links">
+                <span class="footer-link" id="copyCompanyBtn">Centron Energy Savings</span>
+                <span class="footer-link-sep">|</span>
+                <span class="footer-link" id="copyBankBtn">Bank Details</span>
+            </div>
         </div>
     `;
 
@@ -379,6 +384,26 @@ function displayResults(results, isQuote = false) {
                 updateSelectionUI();
             });
         });
+
+        // Footer links copy listeners
+        const copyCompanyBtn = resultsContainer.querySelector('#copyCompanyBtn');
+        const copyBankBtn = resultsContainer.querySelector('#copyBankBtn');
+
+        if (copyCompanyBtn) {
+            copyCompanyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText('Centron Energy Savings Technology Corp.');
+                copyCompanyBtn.textContent = 'Copied!';
+                setTimeout(() => { copyCompanyBtn.textContent = 'Centron Energy Savings'; }, 2000);
+            });
+        }
+
+        if (copyBankBtn) {
+            copyBankBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText('Account Name: Centron Energy Savings Technology Corp.\nAccount Number: Metrobank - 150-7-15051630-3');
+                copyBankBtn.textContent = 'Copied!';
+                setTimeout(() => { copyBankBtn.textContent = 'Bank Details'; }, 2000);
+            });
+        }
     }
 }
 

@@ -416,6 +416,31 @@ input:checked + .slider:before {
     line-height: 1.6;
 }
 
+.footer-links {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-link {
+    color: #64b5f6;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: #90caf9;
+}
+
+.footer-link-sep {
+    color: #666;
+    font-size: 13px;
+}
+
 .footer-sep {
     color: #555;
     margin-bottom: 2px;
