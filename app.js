@@ -19,6 +19,8 @@ const generateQuoteBtn = document.getElementById('generateQuoteBtn');
 const copyBtn = document.getElementById('copyBtn');
 const showAllBtn = document.getElementById('showAllBtn');
 const showTotalToggle = document.getElementById('showTotalToggle');
+const copyCompanyBtnLaunch = document.getElementById('copyCompanyBtnLaunch');
+const copyBankBtnLaunch = document.getElementById('copyBankBtnLaunch');
 
 // Load product data
 async function loadProductData() {
@@ -34,6 +36,7 @@ async function loadProductData() {
 
 // Initialize
 loadProductData();
+setupCopyListeners(copyCompanyBtnLaunch, copyBankBtnLaunch);
 
 // Start button click
 startBtn.addEventListener('click', () => {
@@ -388,22 +391,26 @@ function displayResults(results, isQuote = false) {
         // Footer links copy listeners
         const copyCompanyBtn = resultsContainer.querySelector('#copyCompanyBtn');
         const copyBankBtn = resultsContainer.querySelector('#copyBankBtn');
+        setupCopyListeners(copyCompanyBtn, copyBankBtn);
+    }
+}
 
-        if (copyCompanyBtn) {
-            copyCompanyBtn.addEventListener('click', () => {
-                navigator.clipboard.writeText('Centron Energy Savings Technology Corp.');
-                copyCompanyBtn.textContent = 'Copied!';
-                setTimeout(() => { copyCompanyBtn.textContent = 'Centron Energy Savings'; }, 2000);
-            });
-        }
+// Reusable function to setup copy listeners for company and bank buttons
+function setupCopyListeners(companyBtn, bankBtn) {
+    if (companyBtn) {
+        companyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('Centron Energy Savings Technology Corp.');
+            companyBtn.textContent = 'Copied!';
+            setTimeout(() => { companyBtn.textContent = 'Centron Energy Savings'; }, 2000);
+        });
+    }
 
-        if (copyBankBtn) {
-            copyBankBtn.addEventListener('click', () => {
-                navigator.clipboard.writeText('Account Name: Centron Energy Savings Technology Corp.\nAccount Number: Metrobank - 150-7-15051630-3');
-                copyBankBtn.textContent = 'Copied!';
-                setTimeout(() => { copyBankBtn.textContent = 'Bank Details'; }, 2000);
-            });
-        }
+    if (bankBtn) {
+        bankBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('Account Name: Centron Energy Savings Technology Corp.\nAccount Number: Metrobank - 150-7-15051630-3');
+            bankBtn.textContent = 'Copied!';
+            setTimeout(() => { bankBtn.textContent = 'Bank Details'; }, 2000);
+        });
     }
 }
 
