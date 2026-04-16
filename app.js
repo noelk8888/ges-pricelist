@@ -335,11 +335,13 @@ function displayResults(results, isQuote = false) {
                 <div>Centron Energy Savings Technology Corporation</div>
                 <div>www.gesled.blogspot.com</div>
             </div>
+            ${!isQuote ? `
             <div class="footer-links">
                 <span class="footer-link" id="copyCompanyBtn">Centron Energy Savings</span>
                 <span class="footer-link-sep">|</span>
                 <span class="footer-link" id="copyBankBtn">Bank Details</span>
             </div>
+            ` : ''}
         </div>
     `;
 
