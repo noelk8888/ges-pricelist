@@ -429,7 +429,7 @@ function copyResults() {
     });
 
     // Build plain text version
-    let textOutput = `${currentCompanyName} (Discounted Price)\n========\nPrice valid until ${validUntilStr}\n\n`;
+    let textOutput = `${currentCompanyName} \n(Discounted Price)\n========\nPrice valid until ${validUntilStr}\n\n`;
     let totalAmount = 0;
 
     if (isQuoteMode && selectedProducts.size > 0) {
@@ -473,13 +473,11 @@ function copyResults() {
         });
     }
 
-    textOutput += `💡 Prices are subject to change. Stocks subject to availability. VAT-in.\n`;
-    textOutput += `PROMO:  Free delivery within MM with min purchase of Php 1,000 only\n`;
     textOutput += `==========\n`;
     textOutput += `Centron Energy Savings Technology Corporation\n`;
-    textOutput += `Address: 8390 Dr. Arcadio Santos Ave., BF Homes Parañaque City\n`;
-    textOutput += `TIN # 008-013-400-000\n`;
-    textOutput += `www.gesled.blogspot.com`;
+    textOutput += `www.gesled.blogspot.com\n\n`;
+    textOutput += `💡 Prices are subject to change. Stocks subject to availability. VAT-in.\n`;
+    textOutput += `PROMO:  Free delivery within MM with min purchase of Php 1,000 only`;
 
     // Copy to clipboard
     navigator.clipboard.writeText(textOutput).catch(err => {
