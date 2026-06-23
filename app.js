@@ -19,6 +19,7 @@ const generateQuoteBtn = document.getElementById('generateQuoteBtn');
 const copyBtn = document.getElementById('copyBtn');
 const showAllBtn = document.getElementById('showAllBtn');
 const showTotalToggle = document.getElementById('showTotalToggle');
+const showPromoToggle = document.getElementById('showPromoToggle');
 const copyCompanyBtnLaunch = document.getElementById('copyCompanyBtnLaunch');
 const copyBankBtnLaunch = document.getElementById('copyBankBtnLaunch');
 
@@ -145,6 +146,20 @@ showTotalToggle.addEventListener('change', () => {
     }
 });
 
+// Show Promo toggle
+showPromoToggle.addEventListener('change', () => {
+    if (resultsContainer.classList.contains('show')) {
+        if (isQuoteMode) {
+            generateQuoteBtn.click();
+        } else {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm.length >= 2) {
+                performSearch(searchTerm);
+            }
+        }
+    }
+});
+
 // Perform search with improved smart matching
 function performSearch(searchTerm) {
     const lowerSearchTerm = searchTerm.toLowerCase();
@@ -256,6 +271,7 @@ function displayResults(results, isQuote = false) {
 
     let totalAmount = 0;
     const showTotal = showTotalToggle.checked;
+    const showPromo = showPromoToggle.checked;
 
     results.forEach(product => {
         if (isQuote) {
@@ -327,8 +343,7 @@ function displayResults(results, isQuote = false) {
         </div>
         <div class="results-footer">
             <div class="footer-disclaimer">
-                💡 Prices are subject to change. Stocks subject to availability. VAT-in.<br>
-                PROMO: &nbsp;Free delivery within MM with min purchase of Php 1,000 only
+                💡 Prices are subject to change. Stocks subject to availability. VAT-in.${showPromo ? '<br>\n                PROMO: &nbsp;Free delivery within MM with min purchase of Php 1,000 only' : ''}
             </div>
             <div class="footer-company">
                 <div class="footer-sep">==========</div>
@@ -478,8 +493,10 @@ function copyResults() {
     textOutput += `==========\n`;
     textOutput += `Centron Energy Savings Technology Corporation\n`;
     textOutput += `www.gesled.blogspot.com\n\n`;
-    textOutput += `💡 Prices are subject to change. Stocks subject to availability. VAT-in.\n`;
-    textOutput += `PROMO:  Free delivery within MM with min purchase of Php 1,000 only`;
+    textOutput += `💡 Prices are subject to change. Stocks subject to availability. VAT-in.`;
+    if (showPromoToggle.checked) {
+        textOutput += `\nPROMO:  Free delivery within MM with min purchase of Php 1,000 only`;
+    }
 
     // Copy to clipboard
     navigator.clipboard.writeText(textOutput).catch(err => {

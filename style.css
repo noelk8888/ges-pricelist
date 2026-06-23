@@ -116,6 +116,8 @@ body {
     padding: 15px;
     background: #f9f9f9;
     border-radius: 8px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .selection-counter {
@@ -180,7 +182,8 @@ body {
 }
 
 /* Total Toggle Switch */
-.total-toggle-wrap {
+.total-toggle-wrap,
+.promo-toggle-wrap {
     display: flex;
     align-items: center;
     gap: 8px;
